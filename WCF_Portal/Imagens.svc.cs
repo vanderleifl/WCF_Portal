@@ -24,8 +24,9 @@ namespace WCF_Portal
                 Conexao con = new Conexao();
                 log += " Passei 1";
                 string sql;
-                sql = "select * from PS_IMAGENS"
-                    + " where PS_STATUS > 0";
+                sql = "select * from PS_IMAGENS "
+                    + " where PS_STATUS > 0 "
+                    +$"   and PS_CODEMP = {con.codEmp}";
                 log += " Passei 2 - sql: " + sql;
                 lista = con.ConOra.Query<PS_IMAGENS>(sql);
                 log += " Passei 3";
